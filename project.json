@@ -1,0 +1,27 @@
+{
+    "name": "bx72_pendulum",
+    "board": "bx72",
+    "part": "GW5AT-LV138PG484AC1/I0",
+    "device": "GW5AT-138B",
+    "device_version": "B",
+    "top": "pendulum_top",
+    "files": [
+        "src/pendulum_top.v",
+        "src/motor_driver.v",
+        "deps/ads8361_reader4.v",
+        "deps/balance_core.v",
+        "deps/vofa_firewater.v",
+        "src/uart_cmd_parser.v",
+        "src/firewater_tx8.v",
+        "src/balance_ctrl.v",
+        "src/swing_kick.v"
+    ],
+    "cst": "cst/pendulum_bx72.cst",
+    "sdc": null,
+    "sim_top": null,
+    "sim_files": [],
+    "sim_primitives": false,
+    "ports": {},
+    "options": {},
+    "config_flash": "unknown"
+}

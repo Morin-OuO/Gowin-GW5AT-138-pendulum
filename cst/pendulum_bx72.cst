@@ -1,0 +1,63 @@
+// BX72 + ADS8361 angle sensor + TB6612 motor driver + AB encoder.
+//
+// Wiring supplied by the user (2026-10-30):
+//   Encoder A -> L13   Encoder B -> L15
+//   STBY      -> M16   IN1       -> K16   IN2 -> L18   PWM -> N19
+//   TB6612 driver, AB quadrature encoder.
+IO_LOC "clk" Y18;
+IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+IO_LOC "key2" V17;
+IO_PORT "key2" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+// ---- ADS8361 angle sensor (verified) ----
+IO_LOC "adc_m0" K13;
+IO_PORT "adc_m0" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+IO_LOC "adc_m1" K14;
+IO_PORT "adc_m1" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+IO_LOC "adc_convst" J15;
+IO_PORT "adc_convst" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+IO_LOC "adc_a0" H15;
+IO_PORT "adc_a0" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+IO_LOC "adc_cs_n" G15;
+IO_PORT "adc_cs_n" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+IO_LOC "adc_clk" H14;
+IO_PORT "adc_clk" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+IO_LOC "adc_busy" J14;
+IO_PORT "adc_busy" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+IO_LOC "adc_dout" H13;
+IO_PORT "adc_dout" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+// ---- TB6612 motor driver ----
+IO_LOC "motor_pwm" N19;
+IO_PORT "motor_pwm" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+IO_LOC "motor_in1" K16;
+IO_PORT "motor_in1" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+IO_LOC "motor_in2" L18;
+IO_PORT "motor_in2" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+IO_LOC "motor_stby" M16;
+IO_PORT "motor_stby" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+// ---- AB quadrature encoder ----
+IO_LOC "encoder_a" L13;
+IO_PORT "encoder_a" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+IO_LOC "encoder_b" L15;
+IO_PORT "encoder_b" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+// ---- host link ----
+IO_LOC "uart_tx" N14;
+IO_PORT "uart_tx" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+IO_LOC "uart_rx" N13;
+IO_PORT "uart_rx" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
